@@ -4,11 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-# CONFIGURACIÓN MySQL (phpMyAdmin)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
-    "DATABASE_URL",
-    "mysql+pymysql://root:@localhost/flask_db"  # fallback local
-)
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://usuario:contraseña@host:puerto/nombre_db"
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -91,5 +88,6 @@ def version():
 # ---------------- EJECUCIÓN ---------------- #
 if __name__ == '__main__':
     app.run(debug=True)
+
 
 
