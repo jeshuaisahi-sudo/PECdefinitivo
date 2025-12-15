@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request, redirect, url_for , request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 
@@ -90,4 +91,5 @@ def version():
 # ---------------- EJECUCIÓN ---------------- #
 if __name__ == '__main__':
     app.run(debug=True)
+
 
